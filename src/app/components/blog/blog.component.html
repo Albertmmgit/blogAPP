@@ -3,25 +3,45 @@
     <h2>Formulario para la introducción de noticias</h2>
     <div class="form__section">
       <label for="title">Título de la noticia</label>
-      <input id="title" type="title" placeholder="Introduce un título" />
+      <input
+        id="title"
+        type="title"
+        placeholder="Introduce un título"
+        [(ngModel)]="newNew.title"
+      />
     </div>
 
     <div class="form__section">
       <label for="img">Imagen de la noticia</label>
-      <input id="img" type="img" placeholder="Introduce una url" />
+      <input
+        id="img"
+        type="img"
+        placeholder="Introduce una url"
+        [(ngModel)]="newNew.img"
+      />
     </div>
 
     <div class="form__section">
       <label for="text">Texto de la noticia</label>
-      <input id="text" type="text" placeholder="Introduce un texto" />
+      <input
+        id="text"
+        type="text"
+        placeholder="Introduce un texto"
+        [(ngModel)]="newNew.text"
+      />
     </div>
 
     <div class="form__section">
       <label for="date">Fecha de la noticia</label>
-      <input id="date" type="date" placeholder="Introduce una Fecha" />
+      <input
+        id="date"
+        type="date"
+        placeholder="Introduce una Fecha"
+        [(ngModel)]="newNew.date"
+      />
     </div>
 
-    <button class="button">Guardar</button>
+    <button class="button" (click)="newNews()">Guardar</button>
   </div>
   <div class="blog__news-content" [innerHTML]="loadNews()"></div>
 </div>

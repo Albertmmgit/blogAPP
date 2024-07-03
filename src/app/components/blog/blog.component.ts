@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Iblog } from '../../interfaces/iblog.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -32,6 +33,16 @@ export class BlogComponent {
     })
 
     return html
+  }
+
+  newNews() {
+    if (this.newNew.title !== "" && this.newNew.img !== "" && this.newNew.text !== "" && this.newNew.date !== "") {
+      this.arrNews.push(this.newNew)
+      this.newNew = {title: "", img: "", text: "", date: ""}
+    } else {
+      alert("Debes rellenar todos los campos")
+    }
+
   }
 
 }
