@@ -39,6 +39,11 @@ button {
     margin-bottom: 20px;
 }
 
+.eliminar {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 

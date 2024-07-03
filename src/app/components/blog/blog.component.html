@@ -42,6 +42,17 @@
     </div>
 
     <button class="button" (click)="newNews()">Guardar</button>
+
+    <div class="eliminar">
+      <h2>
+        <label for="">Eliminar noticia</label>
+      </h2>
+      <select name="" id="delete">
+        <option value="" selected>Selecciona una noticia</option>
+        <option *ngFor="let option of arrNews">{{ option.title }}</option>
+      </select>
+      <button (click)="deleteNews()">Eliminar</button>
+    </div>
   </div>
   <div class="blog__news-content" [innerHTML]="loadNews()"></div>
 </div>

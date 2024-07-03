@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Iblog } from '../../interfaces/iblog.interface';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -42,7 +43,15 @@ export class BlogComponent {
     } else {
       alert("Debes rellenar todos los campos")
     }
+  }
 
+  deleteNews() {
+    const news = document.querySelector("#delete") as HTMLSelectElement
+    const newsSelected = news.value
+    this.arrNews = this.arrNews.filter(news => news.title !== newsSelected)
+    if (newsSelected === "") {
+      alert("Debe seleccionar una noticia")
+    }
   }
 
 }
