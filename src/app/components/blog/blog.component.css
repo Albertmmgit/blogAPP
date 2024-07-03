@@ -1,0 +1,51 @@
+
+
+.blogContent {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.form {
+
+    flex-basis: 30%;
+
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    row-gap: 20px;
+    border-left: 1px solid black;
+    padding-left: 10px;
+    
+}
+
+input,
+button {
+    display: block;
+    width: 80%;
+    padding: 0;
+    
+}
+
+.form__section {
+    margin: 10px 0;
+}
+
+.button {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+@media (max-width: 768px)  {
+    
+    .blogContent {
+        flex-direction: column
+    };
+}
