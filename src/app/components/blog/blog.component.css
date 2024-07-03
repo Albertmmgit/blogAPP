@@ -1,19 +1,19 @@
 
 
-.blogContent {
+.blog_content {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
 
-.form {
+.blog__form-content {
 
     flex-basis: 30%;
 
 }
 
-.news {
+.blog__news-content {
     display: flex;
     flex-direction: column;
     flex-basis: 70%;
@@ -38,7 +38,6 @@ button {
 .button {
     margin-bottom: 20px;
 }
-
 
 
 

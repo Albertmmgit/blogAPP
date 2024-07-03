@@ -1,5 +1,5 @@
-<div class="blogContent">
-  <div class="form">
+<div class="blog_content">
+  <div class="blog__form-content">
     <h2>Formulario para la introducción de noticias</h2>
     <div class="form__section">
       <label for="title">Título de la noticia</label>
@@ -23,5 +23,5 @@
 
     <button class="button">Guardar</button>
   </div>
-  <div class="news">news</div>
+  <div class="blog__news-content" [innerHTML]="loadNews()"></div>
 </div>
