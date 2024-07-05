@@ -41,6 +41,16 @@
       />
     </div>
 
+    <div class="form__section">
+      <label for="tag">Etiqueta de la noticia</label>
+      <input
+        id="tag"
+        type="tag"
+        placeholder="Introduce una etiqueta"
+        [(ngModel)]="newNew.tag"
+      />
+    </div>
+
     <button class="button" (click)="newNews()">Guardar</button>
 
     <div class="eliminar">
@@ -49,10 +59,34 @@
       </h2>
       <select name="" id="delete">
         <option value="" selected>Selecciona una noticia</option>
-        <option *ngFor="let option of arrNews">{{ option.title }}</option>
+
+        @for (option of arrNews; track option.title) {
+        <option>
+          {{ option.title }}
+        </option>
+        }
       </select>
+
       <button (click)="deleteNews()">Eliminar</button>
     </div>
   </div>
-  <div class="blog__news-content" [innerHTML]="loadNews()"></div>
+
+  <div>
+    <div class="etiqueta">
+      <ul class="tags">
+        <li (click)="allNews()" class="tagAll">Todos</li>
+        @for (option of arrNews; track option.title) {
+        <li (click)="tags($event)">
+          {{ option.tag }}
+        </li>
+        }
+      </ul>
+    </div>
+    <div class="blog__news-content" [innerHTML]="loadNews()"></div>
+  </div>
 </div>
+
+<!--@for (new of arrNews let i = $index) {
+  <article>
+    <h4>{{new.title}}
+}-->

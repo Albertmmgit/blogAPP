@@ -3,4 +3,5 @@ export interface Iblog {
     img: string
     text: string
     date: string
+    tag: string
 }

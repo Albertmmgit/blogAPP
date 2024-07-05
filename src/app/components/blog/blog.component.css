@@ -44,6 +44,14 @@ button {
     flex-direction: column;
 }
 
+.etiqueta {
+    margin-bottom: 10px;
+}
+
+.tagAll {
+    font-weight: bold;
+}
+
 
 
 

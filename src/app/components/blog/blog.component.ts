@@ -12,19 +12,18 @@ import { CommonModule } from '@angular/common';
 })
 export class BlogComponent {
   
-  newNew: Iblog = {title: "", img: "", text: "", date: ""}
-
+  newNew: Iblog = {title: "", img: "", text: "", date: "", tag: ""}
+ 
   arrNews: Iblog[] = [
-    {title: "aa", img: "./images/foto1.jpeg", text: "xxxxxx", date: "2333"},
-    {title: "bb", img: "xxx", text: "xxxxxx", date: "2333"}
+    {title: "aa", img: "https://placehold.co/200x200", text: "xxxxxx", date: "2333", tag: "deportes"},
+    {title: "bb", img: "https://placehold.co/200x200", text: "xxxxxx", date: "2333", tag: "cultura"}
    ]
 
    loadNews() : string {
     let html = ""
-  
     this.arrNews.forEach((news: Iblog) => {
       html += `
-      <article class="news">
+      <article class="news ${news.tag}">
         <h2 class="title">${news.title}</h2>
         <p class="text">${news.text}</p>
         <img src="${news.img}" />
@@ -32,14 +31,13 @@ export class BlogComponent {
       </article>
         `
     })
-
     return html
   }
 
   newNews() {
     if (this.newNew.title !== "" && this.newNew.img !== "" && this.newNew.text !== "" && this.newNew.date !== "") {
       this.arrNews.push(this.newNew)
-      this.newNew = {title: "", img: "", text: "", date: ""}
+      this.newNew = {title: "", img: "", text: "", date: "", tag: ""}
     } else {
       alert("Debes rellenar todos los campos")
     }
@@ -52,6 +50,31 @@ export class BlogComponent {
     if (newsSelected === "") {
       alert("Debe seleccionar una noticia")
     }
+  }
+
+  tags($event: Event) {
+    let content = document.querySelector(".blog__news-content") as HTMLSelectElement
+    let tag = $event.target as HTMLSelectElement
+    let filter = tag.innerText
+    let newARR = this.arrNews.filter(news => news.tag == filter)
+    content.innerHTML = ""
+    let html = ""
+    newARR.forEach((news: Iblog) => {
+      html += `
+      <article class="news ${news.tag}">
+        <h2 class="title">${news.title}</h2>
+        <p class="text">${news.text}</p>
+        <img src="${news.img}" />
+        <p class="date">${news.date}</p>
+      </article>
+        `
+    })
+    content.innerHTML = html
+      }
+    
+  allNews() {
+    let content = document.querySelector(".blog__news-content") as HTMLSelectElement
+    content.innerHTML = this.loadNews()
   }
 
 }
