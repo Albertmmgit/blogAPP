@@ -71,10 +71,11 @@
     </div>
   </div>
 
-  <div>
-    <div class="etiqueta">
+  <div class="blog__news-content">
+    <div class="news__tag-content">
       <ul class="tags">
-        <li (click)="allNews()" class="tagAll">Todos</li>
+        <li>Etiquetas:</li>
+        <li (click)="allNews()" class="tagAll">Todas</li>
         @for (option of arrNews; track option.title) {
         <li (click)="tags($event)">
           {{ option.tag }}
@@ -82,7 +83,7 @@
         }
       </ul>
     </div>
-    <div class="blog__news-content" [innerHTML]="loadNews()"></div>
+    <div class="news-content" [innerHTML]="loadNews()"></div>
   </div>
 </div>
 

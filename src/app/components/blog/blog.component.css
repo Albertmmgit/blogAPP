@@ -1,26 +1,24 @@
 
-
 .blog_content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
 }
 
-
 .blog__form-content {
-
     flex-basis: 30%;
-
 }
 
 .blog__news-content {
+    flex-basis: 70%;
+}
+
+.news-content {
     display: flex;
     flex-direction: column;
-    flex-basis: 70%;
     row-gap: 20px;
-    border-left: 1px solid black;
-    padding-left: 10px;
-    
+    border-left: 1px solid rgb(139, 141, 142);
+    padding-left: 10px; 
 }
 
 input,
@@ -28,7 +26,6 @@ button {
     display: block;
     width: 80%;
     padding: 0;
-    
 }
 
 .form__section {
@@ -42,9 +39,10 @@ button {
 .eliminar {
     display: flex;
     flex-direction: column;
+    row-gap: 5px;
 }
 
-.etiqueta {
+.news__tag-content {
     margin-bottom: 10px;
 }
 
@@ -55,9 +53,9 @@ button {
 
 
 
-@media (max-width: 768px)  {
+@media (min-width: 768px)  {
     
-    .blogContent {
-        flex-direction: column
+    .blog_content {
+        flex-direction: row
     };
 }

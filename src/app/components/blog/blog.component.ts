@@ -15,8 +15,8 @@ export class BlogComponent {
   newNew: Iblog = {title: "", img: "", text: "", date: "", tag: ""}
  
   arrNews: Iblog[] = [
-    {title: "aa", img: "https://placehold.co/200x200", text: "xxxxxx", date: "2333", tag: "deportes"},
-    {title: "bb", img: "https://placehold.co/200x200", text: "xxxxxx", date: "2333", tag: "cultura"}
+    {title: "España a semifinales", img: "https://placehold.co/200x200", text: "España vence a Alemania en la prórroga y se califica para las semifinales de la Eurocpoa 2024", date: "05/07/2024", tag: "deportes"},
+    {title: "Momias ", img: "https://placehold.co/200x200", text: "El empresario Gustavo Cabanillas anuncia el traslado de su museo egipcio en la Ciudad Autónoma hacia la Costa del Sol, aunque mantendrá parte de la colección en su sede actual tras alcanzar un acuerdo con el Gobierno melillense", date: "04/07/2024", tag: "cultura"}
    ]
 
    loadNews() : string {
@@ -53,7 +53,7 @@ export class BlogComponent {
   }
 
   tags($event: Event) {
-    let content = document.querySelector(".blog__news-content") as HTMLSelectElement
+    let content = document.querySelector(".news-content") as HTMLSelectElement
     let tag = $event.target as HTMLSelectElement
     let filter = tag.innerText
     let newARR = this.arrNews.filter(news => news.tag == filter)
@@ -73,7 +73,7 @@ export class BlogComponent {
       }
     
   allNews() {
-    let content = document.querySelector(".blog__news-content") as HTMLSelectElement
+    let content = document.querySelector(".news-content") as HTMLSelectElement
     content.innerHTML = this.loadNews()
   }
 

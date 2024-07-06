@@ -1,14 +1,16 @@
 .wrapper {
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 h1 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(139, 141, 142);
+    padding-bottom: 10px;
 }
 
 .footer {
-    border-top: 1px solid black;
+    border-top: 1px solid rgb(139, 141, 142);
     text-align: center;
     margin-top: 20px;
 }
